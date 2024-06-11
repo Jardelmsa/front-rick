@@ -1,0 +1,134 @@
+.alinhar-container{
+    margin-top:30px;
+    padding: 15px;
+    max-width: 720px;
+    min-width: auto;
+}
+
+.container-titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-erro{
+    min-width: auto;
+    min-height: auto;
+    max-width:720px;
+    height: 511px;
+    background-color: #0A0A0A;
+    margin-top:30px;
+    border-radius: 12px;
+    padding:15px;
+    justify-content: center;
+    align-content: center;
+}
+
+.div-erro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-erro{
+    font-size: 24px;
+    font-weight: 700;
+    color:#FAFAFA;
+
+}
+
+.descricao-erro{
+    font-size: 18px;
+    font-weight: 400px;
+    color:#A4A4A4;
+}
+
+.container-characters{
+    min-width: auto;
+    min-height: auto;
+    max-width:720px;
+    height: auto;
+    margin-top:30px;
+    border-radius: 12px;
+    padding:15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: -20px;
+   
+}
+
+.card{
+    background-color: #0A0A0A;
+    width: 224px;
+    height: 370px;
+    border-radius:12px;
+   
+
+}
+
+.card-body{
+    height: auto;
+}
+
+.img-alinhamento{
+    min-width: auto;
+    min-height: auto;
+    width: 222px;
+    height: 224px;
+}
+
+.alinhamento-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+@media (max-width: 700px) {
+    .alinhamento-cards {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+.card-title{
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color:#FAFAFA;
+} 
+
+.card-text{
+    color:#A4A4A4;
+    font-size: 16px;
+    margin-top:-5px;
+}
+
+.card-text-type{
+    margin-top:-15px;
+}
+
+.card{
+    position: relative;
+}
+.card button{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+  color: transparent;
+  font-size: 24px;
+
+}
+
+.btn-voltar{
+    font-weight: 500;
+    font-size:medium;
+    width: 150px;
+    border-radius: 15px;
+}

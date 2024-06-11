@@ -1,0 +1,30 @@
+ <nav class="navbar navbar-expand-lg bg-nav-project">
+    <div class="container-fluid">
+     <a class="img-logo"><img src="../assets/img/logoproject.png" width="80"/></a>
+      
+      <div class="collapse navbar-collapse container-menu-select" id="navbarSupportedContent">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check btn-check-box" name="btnradio" id="btnradio1" autocomplete="off" checked (click)="irParaInicio();">
+            <label class="btn btn-outline-light" for="btnradio1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill alinhar-icon" viewBox="0 0 16 16">
+                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+              </svg>
+              Início</label>
+            <input type="radio" class="btn-check btn-check-box" name="btnradio" id="btnradio2" autocomplete="off" (click)="irParaFavoritos();">
+            <label class="btn btn-outline-light" for="btnradio2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill alinhar-icon-love" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+              </svg>
+              
+              Favoritos
+              <label class="contador">{{quantidadeFavoritos}}</label>
+            </label>
+             
+        </div>
+       </div>
+    </div>
+  </nav>
+  <router-outlet>
+  </router-outlet>
+
+

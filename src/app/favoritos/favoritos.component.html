@@ -1,0 +1,41 @@
+<div class="container alinhar-container">
+    <div class="container-titulo">
+      <div class="titulo">
+        <h1 class="title-font">FAVORITOS</h1>
+      </div>
+    </div>
+    <div class="container container-characters">
+      <div class="alinhamento-cards row row-cols-1 row-cols-md-3 g-5">
+        <div *ngFor="let favorito of favoritos" >
+          <div class="col">
+            <div class="card">
+              <img [src]="favorito.image" class="card-img-top img-alinhamento" alt="...">
+              <button class="btn btn-link" (click)="removerFavoritos(favorito);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#A4A4A4" class="bi bi-heart" viewBox="0 0 16 16">
+                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                </svg>
+              </button>
+              <div class="card-body">
+                <h5 class="card-title">{{favorito.name}}</h5>
+                <p class="card-text">{{favorito.species}}</p>
+                <p class="card-text card-text-type">{{favorito.type}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="favoritos.length === 0" class="container container-erro ">
+      <div class="div-erro">
+          <div>
+            <h1 class="titulo-erro">Parece que você ainda não tem favoritos</h1>
+          </div>
+          <div>
+            <p class="descricao-erro">Volte à página inicial e escolha os melhores para você.</p>
+          </div>
+          <div>
+            <button class="btn btn-light btn-voltar" (click)="irParaPaginaInicial();">Voltar ao início</button>
+          </div>
+      </div>
+    </div>
+  </div>
