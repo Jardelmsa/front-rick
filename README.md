@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Problemas na versão do node em azure###
+ocorre um bug ao selecionar o favorito pois a versão do node é incompativel com algumas funções do bootstrap icons.
+
+para funcionar basta ser instalada a versão do node 20 no servidor. 
