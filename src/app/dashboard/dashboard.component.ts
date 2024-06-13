@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { FavoritoService } from '../Services/favorito.service';
 import { LoadingComponent } from '../loading/loading.component';
+import { ViewportScroller } from '@angular/common';
 
 
 @Component({
@@ -23,8 +24,8 @@ export class DashboardComponent implements OnInit {
   loading: boolean = false;
 
  
-  constructor(private dashboardService:DashboardService, private favoritoService: FavoritoService ) {
-
+  constructor(private dashboardService:DashboardService, private favoritoService: FavoritoService , private viewportScroller: ViewportScroller) {
+    
     this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -32,13 +33,15 @@ export class DashboardComponent implements OnInit {
         if(term.trim() ==''){
         
           this.mostrarPaginaErro = false;
-          this.loading =false;
+       
           return this.dashboardService.getAllCharacters(this.currentPage);
           
         } else{
+          
           return this.dashboardService.searchCharacterByName(term);
+          
         }
-
+        
       }))
     .subscribe((response) => {
         this.characters = response.results;
@@ -53,7 +56,7 @@ export class DashboardComponent implements OnInit {
 
     this.favoritoService.favoritos$.subscribe(favorito =>{
       this.favoritos = favorito;
-      this.totalFavoritos = this;this.favoritoService.contarFavoritos();
+      this.totalFavoritos = this.favoritoService.contarFavoritos();
     })
 
 
@@ -71,6 +74,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   
     this.getAllCharacters(this.currentPage);
+    
+    this.totalFavoritos = this.favoritoService.contarFavoritos();
+    
 
   }
 
@@ -78,6 +84,7 @@ export class DashboardComponent implements OnInit {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
       this.getAllCharacters(this.currentPage);
+      this.scrollToTop();
     }
   }
 
@@ -85,6 +92,7 @@ export class DashboardComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.getAllCharacters(this.currentPage);
+      this.scrollToTop();
     }
   }
 
@@ -98,7 +106,9 @@ export class DashboardComponent implements OnInit {
     }))
   }
 
-
+  scrollToTop(): void {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
 
   removerFavoritos(item:string){
     this.favoritoService.removerFavorito(item);

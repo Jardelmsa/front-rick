@@ -40,6 +40,7 @@
 
 }
 
+
 .container-erro{
     min-width: auto;
     min-height: auto;
@@ -115,11 +116,30 @@
    
 }
 
+.selected{
+    color:black;
+}
+
 @media (max-width: 700px) {
     .alinhamento-cards {
       flex-direction: column;
       justify-content: center;
     }
+  }
+
+  @media (max-width: 700px) {
+    .container-titulo {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixa-pesquisa{
+        margin-top:15px;
+    }
+
   }
 
 .card-title{
@@ -146,13 +166,26 @@
 }
 .card button{
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   z-index: 1000;
-  color: transparent;
   font-size: 24px;
 
 }
+
+
+.bi-heart{
+    color: black;
+}
+
+.bi-heart-fill{
+    color: black;
+}
+
+
+
+
+
 
 .previus-next{
     display: flex;

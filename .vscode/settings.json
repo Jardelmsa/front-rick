@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4b8fca9e-40ef-4a27-b08b-bd78139d96f4/resourceGroups/front-rick/providers/Microsoft.Web/sites/apprickandmorty",
+    "appService.deploySubpath": "dist"
+}

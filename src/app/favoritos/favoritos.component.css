@@ -65,13 +65,27 @@
     width: 224px;
     height: 370px;
     border-radius:12px;
-   
-
+    flex: 1 1 calc(33.333% - 16px);
 }
 
 .card-body{
     height: auto;
 }
+
+.alinhamento-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.bi-heart{
+    color: black;
+}
+
+.bi-heart-fill{
+    color: black;
+}
+
 
 .img-alinhamento{
     min-width: auto;
@@ -82,8 +96,11 @@
 
 .alinhamento-cards{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    min-width: auto;
+    width: 720px;
+    margin-top: 30px;
    
 }
 
@@ -91,8 +108,24 @@
     .alinhamento-cards {
       flex-direction: column;
       justify-content: center;
+      align-content: center;
+      width: auto;
     }
+    .card{
+        background-color: #0A0A0A;
+        width: 224px;
+        height: 370px;
+        border-radius:12px;
+        flex: 1 1 calc(50% - 16px);
+       
+    
+    }
+
   }
+
+
+
+ 
 
 .card-title{
     font-family: "Creepster", system-ui;

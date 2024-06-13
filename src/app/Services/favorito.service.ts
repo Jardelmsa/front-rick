@@ -53,7 +53,17 @@ export class FavoritoService {
     this.favoritosSubject.next(this.favoritos);
     this.contadorSubject.next(this.favoritos.length); 
   }
+
+  getFavoritos(): string[] {
+    const favoritos = localStorage.getItem('favoritos');
+    return favoritos ? JSON.parse(favoritos) : [];
+  }
+
+
+
   contarFavoritos(): number {
+    
+    const favoritos = this.getFavoritos();
     return this.favoritos.length;
   }
 }
